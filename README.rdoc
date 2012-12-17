@@ -1,3 +1,6 @@
-= oauth_provider
+= Redmine OAuth Provider
 
-Description goes here
+Add this to `config/environment.rb`:
+
+    require 'oauth/rack/oauth_filter'
+    config.middleware.use OAuth::Rack::OAuthFilter
