@@ -1,4 +1,6 @@
 class Oauth2Verifier < OauthToken
+  unloadable
+
   validates_presence_of :user
   attr_accessor :state
 

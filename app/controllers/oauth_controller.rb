@@ -9,7 +9,11 @@ class OauthController < ApplicationController
   end
 
   def login_required
-    require_login
+    raise Unauthorized unless User.current.logged?
+  end
+
+  def current_user
+    User.current
   end
 
   protected

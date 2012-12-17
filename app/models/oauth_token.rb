@@ -1,4 +1,6 @@
 class OauthToken < ActiveRecord::Base
+  unloadable
+
   belongs_to :client_application
   belongs_to :user
   validates_uniqueness_of :token

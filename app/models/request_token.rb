@@ -1,4 +1,5 @@
 class RequestToken < OauthToken
+  unloadable
 
   attr_accessor :provided_oauth_verifier
 

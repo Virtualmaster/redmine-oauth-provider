@@ -1,6 +1,8 @@
 # Simple store of nonces. The OAuth Spec requires that any given pair of nonce and timestamps are unique.
 # Thus you can use the same nonce with a different timestamp and viceversa.
 class OauthNonce < ActiveRecord::Base
+  unloadable
+
   validates_presence_of :nonce, :timestamp
   validates_uniqueness_of :nonce, :scope => :timestamp
 
